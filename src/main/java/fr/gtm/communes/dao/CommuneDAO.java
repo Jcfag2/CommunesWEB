@@ -1,10 +1,8 @@
 package fr.gtm.communes.dao;
 
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-
 import fr.gtm.communes.entities.Commune;
 import fr.gtm.communes.entities.Departement;
 
@@ -20,6 +18,10 @@ public class CommuneDAO extends AbstractDAO<Commune, Long>{
 	
 	public List<Commune> getCommunesByDepartement(String departement){
 		return getCommunes("Commune.byDepartement", "nom", departement.toUpperCase());
+	}
+	
+	public List<Commune> getCommunesByNom(String nom){
+		return getCommunes("Commune.byNom", "nom", nom.toUpperCase()+"%");
 	}
 	
 	public List<Commune> getCommunesByRegion(String region){
