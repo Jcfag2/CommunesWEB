@@ -15,8 +15,6 @@
 		<td>${commune.codePostal }</td>
 	</tr>
 	</c:forEach>
-
-
 </table>
 <a href="index.jsp">Retour</a>
 </body>
